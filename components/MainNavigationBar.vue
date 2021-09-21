@@ -1,20 +1,22 @@
 <template>
-  <div id="navigation-bar">
+  <div id="navigation-bar" class="primary-background">
     <div class="logo">
-      <img src="../static/temp/logo-small.png" alt="Blue Gallery Logo">
+      <h2>Brand</h2>
     </div>
     <div class="items-box">
       <ul>
-        <li><router-link to="/">About Me</router-link></li>
-        <li class="dropdown">
-          <span>Portfolio</span>
-          <ul class="dropdown-content">
-            <li><router-link to="portfolio">Portfolio</router-link></li>
-            <li><router-link to="new-album">New Album</router-link></li>
-            <!--<li><router-link to="#">Stand Alone Photos</router-link></li>-->
-          </ul>
-        </li>
-        <li><a>Sign Out</a></li>
+		  <li>
+			  <NuxtLink to="/">Home</NuxtLink>
+		  </li>
+		  <li>
+			  <NuxtLink to="/about">About Me</NuxtLink>
+		  </li>
+		  <li>
+			  <NuxtLink to="/contact">Contact</NuxtLink>
+		  </li>
+		  <li>
+			  <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+		  </li>
       </ul>
     </div>
   </div>
@@ -36,13 +38,17 @@ export default {
   left: 0;
   padding: 0 60px 0 200px;
   -webkit-transform: translate3d(0, 0, 0);
-  background-color: #0E0E0E;
   z-index: 10;
 }
 .logo{
   position: absolute;
-  top:30px;
+	height: 100%;
+  top:0;
   left: 50px;
+	padding-top: 10px;
+}
+.logo h2 {
+	color: var(--light);
 }
 .items-box{
   position: relative;

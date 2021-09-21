@@ -1,24 +1,27 @@
 <template>
   <div id="nav" class="position-sticky">
-    <h4>IME APLIKACIJE</h4>
-    <div style="height: 100px;"></div>
+    <!--<h4>IME APLIKACIJE</h4>-->
+    <div class="w-100" style="padding: 0 5rem;">
+      <img src="../static/icon.png" alt="App logo" class="w-100">
+    </div>
+    <div style="height: 40px;"></div>
     <div class="nav-item-wrapper-top">
       <ul class="main-menu">
         <ul class="main-menu">
-          <li class="nav-title">Dashboard</li>
-          <li><router-link to="/dashboard/"><span data-hover="Overview">Overview</span></router-link></li>
-          <li class="nav-title">Projects</li>
-          <li><router-link to="/dashboard/project"><span data-hover="Project Overview">Project Overview</span></router-link></li>
-          <li><router-link to="/dashboard/workflow"><span data-hover="My Workflow">My Workflow</span></router-link></li>
-          <li class="nav-title">Human Resources</li>
-          <li><router-link to="/dashboard/team-management"><span data-hover="Teams">Teams</span></router-link></li>
-          <li><router-link to="/dashboard/role-management"><span data-hover="Manage Roles">Manage Roles</span></router-link></li>
+          <li class="nav-title">Kontrolana ploča</li>
+          <li><NuxtLink to="/admin/dashboard"><span data-hover="Pregled">Pregled</span></NuxtLink></li>
+          <li class="nav-title">Upravljanje</li>
+          <li><NuxtLink to="/admin/gallery"><span data-hover="Galerija">Galerija</span></NuxtLink></li>
+          <li><NuxtLink to="/admin/presentation"><span data-hover="Prezentacija">Prezentacija</span></NuxtLink></li>
+          <li class="nav-title">Postavke računa</li>
+          <li><NuxtLink to="/admnin/account"><span data-hover="Račun">Račun</span></NuxtLink></li>
+          <li><a href="#"><span data-hover="Odjavi se">Odjavi se</span></a></li>
         </ul>
       </ul>
     </div>
     <div class="nav-item-wrapper-bottom">
       <ul class="inner-menu-bottom">
-        <li><span data-hover="Minimize">Minimize</span></li>
+        <li><span data-hover="Minimiziraj">Minimiziraj</span></li>
       </ul>
     </div>
   </div>
@@ -35,7 +38,7 @@ export default {
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: rgb(28, 30, 42);
+  background-color: var(--dark-primary);
   color: #fff;
   padding: 50px 0;
 }
@@ -50,7 +53,7 @@ export default {
   left: 0;
 }
 .main-menu {
-  padding-left: 20px;
+  padding-left: 2.5rem;
   width: 100%;
   list-style-type:  none;
   text-align: left;
@@ -59,7 +62,7 @@ export default {
   margin: 25px 0 10px;
   font-size: 12px;
   text-transform: uppercase;
-  color: #4f5678;
+  color: var(--dim-secondary);
 }
 .main-menu li, .inner-menu-bottom li {
   overflow: hidden;

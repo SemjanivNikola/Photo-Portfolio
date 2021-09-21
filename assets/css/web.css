@@ -1,4 +1,13 @@
 /*****************  COLORING  **************************/
+:root {
+    --dark-primary: rgb(83, 79, 89);
+    --dark-primary-light: rgb(116, 110, 124);
+    --dark-secondary: rgb(115, 68, 50);
+    --dim-primary: rgb(109, 191, 242);
+    --dim-secondary: rgb(242, 195, 167);
+    --light: rgb(242, 242, 242);
+    --light-v1: rgb(255, 255, 255);
+}
 .primary-background {
   background-color: rgb(22, 22, 22);
 }
@@ -58,7 +67,6 @@ a {
   width: 100%;
   height: calc(100vh - 80px);
   overflow: hidden;
-  margin-top: 80px;
 }
 .carousel-wrapper {
   width: 100%;
@@ -124,8 +132,19 @@ a {
   margin-bottom: 12px;
 }
 .slider-item .slider-text-box h5 {
-  padding-bottom: 12px;
-  word-break: break-word;
+    padding-bottom: 12px;
+    word-break: break-word;
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+    -moz-transform: translateY(80px);
+    -ms-transform: translateY(80px);
+    -o-transform: translateY(80px);
+    transform: translateY(80px);
+    -webkit-transition: all 600ms ease-out;
+    -moz-transition: all 600ms ease-out;
+    -ms-transition: all 600ms ease-out;
+    -o-transition: all 600ms ease-out;
+    transition: all 600ms ease-out;
 }
 /*****************  ICON SVG  **************************/
 .icon svg {
@@ -179,4 +198,63 @@ svg:not(:root) {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+/*****************  GENERAL BUTTONS  **************************/
+/*  FLOAT BUTTON */
+.float-btn {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 65px;
+    height: 65px;
+    padding: 18px;
+    border-radius: 50%;
+    border: none;
+    z-index: 1000;
+    cursor: pointer;
+}
+.float-btn.dark, .float-btn.light, .card, .bi, #dashboard, .a-h5 {
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+.float-btn.dark {
+    background-color: var(--dark-primary-light);
+}
+.float-btn.dark .bi {
+    fill: var(--light);
+}
+.float-btn.dark:hover {
+    background-color: var(--light-v1);
+}
+.float-btn.dark:hover .bi {
+    fill: var(--dark-primary);
+}
+.float-btn.light {
+    background-color: var(--light-v1);
+}
+.float-btn.light .bi {
+    fill: var(--dark-primary);
+}
+.float-btn.light:hover {
+    background-color: var(--dark-primary-light);
+}
+.float-btn.light:hover .bi {
+    fill: var(--light);
+}
+.bg-mode.light {
+    background-color: var(--light);
+}
+.bg-mode.dark {
+    background-color: var(--dark-primary);
+}
+
+/*********************************************/
+#modal-xl .modal-dialog .modal-content {
+    background-color: var(--light);
+}
+html {
+    scroll-behavior: smooth;
 }
